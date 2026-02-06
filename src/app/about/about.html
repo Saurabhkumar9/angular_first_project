@@ -1,0 +1,24 @@
+<div class="about-container">
+  <h1>About {{ projectInfo.name }}</h1>
+  
+  <div class="about-card">
+    <h2>Project Description</h2>
+    <p>{{ projectInfo.description }}</p>
+    
+    <h2>Technologies Used</h2>
+    <p><strong>Framework:</strong> {{ projectInfo.technology }}</p>
+    
+    <h2>Key Features</h2>
+    <ul>
+      <li *ngFor="let feature of projectInfo.features">{{ feature }}</li>
+    </ul>
+    
+    <h2>Project Purpose</h2>
+    <p>
+      This project serves as a learning resource for Angular developers 
+      transitioning to the Standalone Components API. It demonstrates 
+      best practices for building modular, maintainable Angular applications 
+      without NgModules.
+    </p>
+  </div>
+</div>
