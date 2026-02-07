@@ -14,6 +14,7 @@ export class NavbarComponent {
   navItems = [
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About' },
-    { path: '/products', label: 'Products' }
+    { path: '/products', label: 'Products' },
+    { path: '/users', label: 'User' }
   ];
 }

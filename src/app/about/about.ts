@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { NgFor } from '@angular/common';
 
 @Component({
+  imports:[NgFor,],
   selector: 'app-about',
   standalone: true,
-  templateUrl: './about.html',
+  templateUrl:'./about.html',
   styleUrls: ['./about.css']
 })
 export class AboutComponent {
