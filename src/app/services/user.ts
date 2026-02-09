@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { User } from '../models/user.model';
 
 @Injectable({
@@ -12,13 +12,17 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
-  // Add user
+  // POST → already works
   addUser(user: User): Observable<User> {
     return this.http.post<User>(this.apiUrl, user);
   }
 
-  // Get all users
+  //  GET → FIXED (SIMPLE)
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.apiUrl);
+    return this.http
+      .get<any>(this.apiUrl)
+      .pipe(
+        map(res => res.users) //  ONLY THIS LINE MATTERS
+      );
   }
 }

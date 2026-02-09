@@ -40,10 +40,11 @@ export class UserComponent implements OnInit {
   }
 
   fetchUsers(): void {
-    this.userService.getUsers().subscribe(data => {
-      this.users = data;
-    });
-  }
+  this.userService.getUsers().subscribe(users => {
+    this.users = users; // ✅ always array now
+  });
+}
+
 
   resetForm(): void {
     this.user = {
